@@ -13,7 +13,7 @@ int main(int args, char *argv[]) {
 
   bool isPrimo = true;
   if(args != 2){
-    printf("\nError: You should add the limit number in the as execution param. e.g: ./fileName 1000\n");
+    printf("\nError: You should add the limit number in the execution param. e.g: ./fileName 1000\n");
     return 0;
   }
 
