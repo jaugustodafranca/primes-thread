@@ -23,8 +23,14 @@ Execute:
 ./prime_parallel [limit] [threads]
 ```
 
-
+Using time param to check the performance
+```c
+time ./prime_seq [limit]
+OR
+time ./prime_parallel [limit] [threads]
+```
 | Parameters | Type | Description  |
 | :-----: |:-----:| ----- |
 | limit     | int | The code will check all the primes numbers until the limit |
 | threads     | int | Number of thread to execute in parallel  |
+| time     | string | Use can use before the commands to get cpu usage, time to execution and etc |
