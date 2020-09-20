@@ -1,42 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
-#include <time.h>
-
-// To compile use: gcc prime_seq.c -o fileName
-// To execute use: ./fileName limit
 
 int main(int args, char *argv[]) {
-  int  limit, count;
-  clock_t time;
-	time = clock();
+  int  limit;
 
-  bool isPrimo = true;
   if(args != 2){
-    printf("\nError: You should add the limit number in the execution param. e.g: ./fileName 1000\n");
+    printf("\nError: You should add the limit number as execution param. e.g: ./file_name 1000\n");
     return 0;
   }
 
   limit = atoi(argv[1]);
-  count = 0;
 
-  for (int i=1; i<=limit; i++){
-    isPrimo = true;
+  for (int i=2; i<=limit; i++){
+    int is_prime = 1;
 
-    for(int j=2; j<=i; j++){
-      if(i % j == 0 && i != j){
-        isPrimo = false;
+    for(int j=2; j<=i/2; j++){
+      if(i % j == 0){
+        is_prime = 0;
+        break;
       }
     }
 
-    if(isPrimo){
-      printf("PRIME: %d \n", i);
-      count++;
+    if(is_prime){
+      printf("\nPRIME %d", i);
     }
   }
-
-  printf("\nTOTAL OF PRIMES: %d\n", count);
-  printf("\nExecution time: %ld ms. \n",(clock() - time) / ((int)CLOCKS_PER_SEC/1000));
-
   return 0;
 }
