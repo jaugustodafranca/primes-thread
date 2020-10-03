@@ -1,0 +1,10 @@
+
+# COMPILED FILES
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# VSCODE
+*.VSCODE
